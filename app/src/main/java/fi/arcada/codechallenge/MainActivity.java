@@ -14,10 +14,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-
+//https://github.com/fw-24/sos24-exempel
     TextView outputText;
     EditText inputText;
-    double[] values = {1,2,4,5,6,7,8,9,0};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
         outputText=findViewById(R.id.outText);
         inputText=findViewById(R.id.inputText);
+
 
         outputText.setText("Min app funkar!");
 
@@ -37,9 +38,11 @@ public class MainActivity extends AppCompatActivity {
         outputText.setText(text);
     }
     public void calculate(View view){
-        String average = inputText.getText().toString();
-        outputText.setText(average);
+        double[] values = {1,2,4,5,6,7,8,9,0};
+
+        outputText.setText(String.format("Medelvärdet: %.2f", Statistics.calcMean(values)));
     }
+
 
 
 }
