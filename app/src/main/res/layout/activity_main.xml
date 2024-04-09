@@ -5,53 +5,98 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/md_theme_light_surface"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/outText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hi code chall"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163" />
+        android:layout_width="253dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="116dp"
+        android:text="Code Challenge"
+        android:textAlignment="viewEnd"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/inputText"
+        app:layout_constraintTop_toBottomOf="@+id/inputText" />
 
     <EditText
         android:id="@+id/inputText"
-        android:layout_width="190dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="92dp"
+        android:layout_width="135dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="120dp"
         android:ems="10"
-        android:hint="Skriv dit namn"
+        android:hint="Namn"
         android:inputType="text"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/outText"
-        app:layout_constraintTop_toBottomOf="@+id/outText" />
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnAdd"
+        android:id="@+id/btnOk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="24dp"
         android:onClick="buttonHandler"
-        android:text="Add"
+        android:text="OK"
+        app:layout_constraintBottom_toBottomOf="@+id/inputText"
+        app:layout_constraintStart_toEndOf="@+id/inputValue"
+        app:layout_constraintTop_toTopOf="@+id/inputText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnCalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:onClick="calculate"
+        android:text="Calculate"
+        app:layout_constraintStart_toStartOf="@+id/inputText"
+        app:layout_constraintTop_toBottomOf="@+id/inputText" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/inputValue"
+        android:layout_width="66dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:ems="10"
+        android:hint="Data"
+        android:inputType="number"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/inputText"
         app:layout_constraintStart_toEndOf="@+id/inputText"
         app:layout_constraintTop_toTopOf="@+id/inputText"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/btnCal"
-        android:layout_width="104dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="52dp"
-        android:onClick="calculate"
-        android:text="Calculate"
-        app:layout_constraintStart_toStartOf="@+id/inputText"
-        app:layout_constraintTop_toBottomOf="@+id/inputText" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="40dp"
+        android:background="@color/md_theme_dark_primary"
+        android:clickable="true"
+        android:onClick="openSettings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_preferences" />
+
+    <TextView
+        android:id="@+id/greetingText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/inputText"
+        app:layout_constraintStart_toStartOf="@+id/inputText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
